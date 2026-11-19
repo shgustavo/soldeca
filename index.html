@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#f8f4ec">
+  <meta name="description" content="Catálogo de Natal da Sol de Cá em Varginha, com enfeites e ideias para presentear.">
+  <title>Natal Sol de Cá · Catálogo de Varginha</title>
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#colecao">Ir para o catálogo</a>
+  <header class="site-header" id="inicio">
+    <div class="shell header-inner">
+      <a aria-label="Sol de Cá, início" class="brand" href="#inicio">
+        <img src="logo.webp" width="56" height="56" alt="">
+        <span>Sol de Cá</span>
+      </a>
+      <nav aria-label="Catálogo">
+        <a class="header-catalog" href="#colecao">Coleção de Natal</a>
+        <button class="selection-toggle" id="open-selection" type="button" aria-haspopup="dialog">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20.5 4.3 13a5 5 0 0 1 7.7-6.3 5 5 0 0 1 7.7 6.3Z"/></svg>
+          <span>Minha seleção</span>
+          <span id="selection-count" class="selection-count" aria-hidden="true">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell hero" aria-labelledby="title">
+      <div class="hero-copy">
+        <span class="eyebrow">Coleção de Natal · Varginha, MG</span>
+        <h1 id="title">Natal feito<br> <em>de detalhes.</em></h1>
+        <p>Enfeites para vestir a casa de Natal e presentes para lembrar de quem faz parte da sua história.</p>
+        <a class="button primary hero-cta" href="#colecao">Explorar a coleção</a>
+      </div>
+      <figure class="hero-photo">
+        <picture>
+          <source media="(max-width: 660px)" srcset="bandeja-verde-720.webp">
+          <img src="bandeja-verde.webp" width="1200" height="1300" fetchpriority="high" alt="Bandeja natalina verde com árvores de dois tamanhos, soldadinho e vaso com raminho.">
+        </picture>
+        <figcaption>Conjunto de mesa natalino · Verde e areia</figcaption>
+      </figure>
+    </section>
+
+    <section class="shell catalog" id="colecao" aria-labelledby="catalog-title">
+      <div class="catalog-intro">
+        <div>
+          <span class="eyebrow">Natal Sol de Cá</span>
+          <h2 id="catalog-title">Enfeites e presentes</h2>
+        </div>
+        <p>Escolha as cores e os aromas que mais combinam com seu Natal e guarde seus favoritos.</p>
+      </div>
+      <div class="filters">
+        <fieldset class="types" aria-label="Tipo de presente" id="type-filter">
+          <legend class="sr-only">Tipo de presente</legend>
+          <label><input type="radio" name="type" value="all" checked><span>Todos</span></label>
+          <label><input type="radio" name="type" value="enfeites"><span>Enfeites</span></label>
+          <label><input type="radio" name="type" value="kits"><span>Kits para presente</span></label>
+          <label><input type="radio" name="type" value="velas"><span>Velas</span></label>
+        </fieldset>
+        <div class="price-control">
+          <label for="price-filter">Faixa de preço</label>
+          <select id="price-filter" aria-describedby="price-note">
+            <option value="all">Todas as faixas</option>
+            <option value="to80">Até R$ 80</option>
+            <option value="to150">Acima de R$ 80 até R$ 150</option>
+            <option value="above150">Acima de R$ 150</option>
+            <option value="pending">Preço a confirmar</option>
+          </select>
+        </div>
+      </div>
+      <div class="results-line">
+        <p id="results-count" aria-live="polite"></p>
+        <p id="price-note">As faixas incluem os valores de referência sinalizados.</p>
+      </div>
+      <div id="products" class="product-grid"></div>
+      <div id="empty-results" class="empty-results" hidden>
+        <h3>Nenhuma peça nesta faixa</h3>
+        <p>Experimente outra faixa de preço ou outro tipo de presente.</p>
+        <button class="button secondary" id="reset-filters" type="button">Limpar filtros</button>
+      </div>
+      <noscript><p>Ative o JavaScript no navegador para explorar a coleção e montar sua seleção.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="logo.webp" width="56" height="56" alt="">
+        <div><strong>Sol de Cá</strong><p>Ideias que ganham forma.</p><p>Fale conosco pelo Whatsapp <a href='wa.me/5535920050161'>(35)92005-0161</a>.</p></div>
+      </div>
+      <div class="footer-location"><span>Natal 2026 · Varginha, MG</span><span>Imagens ilustrativas da coleção</span></div>
+    </div>
+  </footer>
+
+  <dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-title">
+    <div class="detail" id="product-detail"></div>
+  </dialog>
+
+  <dialog id="selection-dialog" class="selection-dialog" aria-labelledby="selection-title">
+    <div class="selection-panel">
+      <div class="dialog-heading">
+        <div><span class="eyebrow">Favoritos</span><h2 id="selection-title">Minha seleção</h2></div>
+        <button class="icon-button close-selection" type="button" aria-label="Fechar seleção" autofocus>
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <p id="storage-note" class="selection-note">Sua seleção fica salva neste navegador.</p>
+      <div id="selection-items" class="selection-items"></div>
+    <div id="status-message" class="sr-only" role="status" aria-live="polite"></div>
+      <div id="selection-summary" class="selection-summary" hidden></div>
+      <button class="button primary continue-button" id="continue" type="button">Continuar explorando</button>
+    </div>
+  </dialog>
+</body>
+</html>
