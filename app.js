@@ -57,7 +57,7 @@ const products = [
 ];
 
 const priceLabels = { suggested: 'Sugestão a confirmar', reference: 'Referência a confirmar' };
-const asset = name => `./assets/${name}.webp`;
+const asset = name => `${name}.webp`;
 const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 const money = cents => currency.format(cents / 100);
 const $ = selector => document.querySelector(selector);
